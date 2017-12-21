@@ -8,6 +8,8 @@ ${PLATFORM_VERSION}     7.0
 ${DEVICE_NAME}          emulator-5554
 ${APP}                  ${CURDIR}\\app\\app-debug-staging-investor.apk
 ${PACKAGE_NAME}         com.cartenz.oss
+${username}             depa.panjie@mailinator.com
+${password}             111111
 
 *** Keywords ***
 Open the app
@@ -18,4 +20,11 @@ Open the app
     Click Element           xpath=//android.widget.Button[@text='ALLOW']
     Click Element           xpath=//android.widget.Button[@text='ALLOW']
     Click Element           xpath=//android.widget.Button[@text='ALLOW']
+
+Login the app
+    Input Text              xpath=//android.widget.EditText[@text='Email']              ${username}
+    Input Text              xpath=//android.widget.EditText[@text='Password']           ${password}
+    Click Element           id=btnLogin
+
+Close the app
     Close All Applications
