@@ -12,5 +12,8 @@ Login aplikasi
 Melihat notifikasi
     View notification
 
-Menutup aplikasi
-    Close the app
+Melihat profil
+    View profile
+
+# Menutup aplikasi
+#     Close the app

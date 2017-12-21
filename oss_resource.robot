@@ -27,9 +27,15 @@ Login the app
     Click Element           id=btnLogin
 
 View notification
-    Page Should Contain Element         id=iv_action_right
+    Wait Until Page Contains Element    id=iv_action_right
     Click Element                       id=iv_action_right
-    Page Should Contain Element         xpath=//android.widget.TextView[@text='Notification']
+    Wait Until Page Contains Element    id=tvDateTime
+    Page Should Contain Element         id=tvDateTime
+
+View profile
+    Click Element                       id=iv_action_left
+    Click Element                       xpath=//android.widget.RelativeLayout[@index='1']
+    Page Should Contain Element         id=iv_user
 
 Close the app
     Close All Applications
