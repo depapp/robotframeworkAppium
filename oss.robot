@@ -18,5 +18,8 @@ Melihat profil
 Mengedit profil
     Edit profile
 
+Logout aplikasi
+    Logout the app
+
 Menutup aplikasi
     Close the app

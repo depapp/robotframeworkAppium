@@ -41,10 +41,22 @@ View profile
 Edit profile
     Wait Until Page Contains Element    id=btn_edit_profile
     Click Element                       id=btn_edit_profile
+
+    # Upload Profile Picture
+    # Click Element                       id=iv_user
+    # Click Element                       xpath=//android.widget.Button[@text='GALLERY']
+    # Click Element                       xpath=//android.widget.LinearLayout[@index='0']
+
     Wait Until Page Contains Element    id=et_citizen_id
     Clear Text                          id=et_citizen_id
     Input Text                          id=et_citizen_id                ${citizen_id}
     Click Element                       id=btn_edit_profile
+    Hide Keyboard
+
+Logout the app
+    Click Element                       id=iv_action_left
+    Click Element                       id=btnLogout
+    Click Element                       xpath=//android.widget.Button[@text='OK']
 
 Close the app
     Close All Applications
