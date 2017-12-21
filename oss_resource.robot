@@ -10,6 +10,7 @@ ${APP}                  ${CURDIR}\\app\\app-debug-staging-investor.apk
 ${PACKAGE_NAME}         com.cartenz.oss
 ${username}             depa.panjie@mailinator.com
 ${password}             111111
+${citizen_id}           2222222222
 
 *** Keywords ***
 Open the app
@@ -36,6 +37,14 @@ View profile
     Click Element                       id=iv_action_left
     Click Element                       xpath=//android.widget.RelativeLayout[@index='1']
     Page Should Contain Element         id=iv_user
+
+Edit profile
+    Wait Until Page Contains Element    id=btn_edit_profile
+    Click Element                       id=btn_edit_profile
+    Wait Until Page Contains Element    id=et_citizen_id
+    Clear Text                          id=et_citizen_id
+    Input Text                          id=et_citizen_id                ${citizen_id}
+    Click Element                       id=btn_edit_profile
 
 Close the app
     Close All Applications

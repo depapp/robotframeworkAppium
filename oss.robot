@@ -15,5 +15,8 @@ Melihat notifikasi
 Melihat profil
     View profile
 
-# Menutup aplikasi
-#     Close the app
+Mengedit profil
+    Edit profile
+
+Menutup aplikasi
+    Close the app
