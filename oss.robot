@@ -9,5 +9,8 @@ Membuka aplikasi
 Login aplikasi
     Login the app
 
+Melihat notifikasi
+    View notification
+
 Menutup aplikasi
     Close the app

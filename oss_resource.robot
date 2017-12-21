@@ -26,5 +26,10 @@ Login the app
     Input Text              xpath=//android.widget.EditText[@text='Password']           ${password}
     Click Element           id=btnLogin
 
+View notification
+    Page Should Contain Element         id=iv_action_right
+    Click Element                       id=iv_action_right
+    Page Should Contain Element         xpath=//android.widget.TextView[@text='Notification']
+
 Close the app
     Close All Applications
