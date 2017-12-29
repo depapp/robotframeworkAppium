@@ -6,4 +6,4 @@ install: "pip install -r requirements.txt"
 language: python
 python:
   - "2.7"
-script: pybot test_google.robot
+script: pybot oss.robot
