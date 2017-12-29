@@ -211,7 +211,7 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
-/app/*
+# /app/*
 /result/*
 
 # End of https://www.gitignore.io/api/windows,android,sublimetext,androidstudio

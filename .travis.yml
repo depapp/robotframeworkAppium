@@ -1,9 +1,42 @@
-#user container-based infrastructure
-sudo: false
-before_install:
+sudo: true
+language: android
+jdk:
+    - oraclejdk8
+notifications: 
+    email:
+        #change with your email
+        - depa.panjie@cartenz.co.id 
+android:
+  components:
+    - platform-tools
+    - tools
+    - build-tools-24.0.2
+    - android-22
+    - android-24
+    - sys-img-armeabi-v7a-android-22
+    - extra-android-m2repository
 # install dependencies
-install: "pip install -r requirements.txt"  
-language: python
-python:
-  - "2.7"
-script: pybot oss.robot
+before_install:
+  - ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
+  - sudo apt-get install build-essential
+  - echo 'export PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"' >>~/.bash_profile
+  - echo 'export MANPATH="/home/linuxbrew/.linuxbrew/share/man:$MANPATH"' >>~/.bash_profile
+  - echo 'export INFOPATH="/home/linuxbrew/.linuxbrew/share/info:$INFOPATH"' >>~/.bash_profile
+  - PATH="/home/linuxbrew/.linuxbrew/bin:$PATH"
+  - brew install gcc
+  - brew install hello
+  - brew install node
+install: 
+  - "sudo pip install 'requests[security]'"
+  - "sudo pip install robotframework-appiumlibrary" 
+  - "npm install -g appium"
+before_script: 
+# Create and start emulator
+  - echo no | android create avd --force -n test -t android-22 --abi armeabi-v7a
+  - emulator -avd test -no-skin -no-audio -no-window &
+  - android-wait-for-emulator
+  - adb shell input keyevent 82 &
+script: 
+  - "appium &"
+  - "sleep 8s"
+  - "pybot oss.robot"
