@@ -1,4 +1,4 @@
-# OeSeS
-OeSeS-Invs.
+# Robot Framework - Selenium
+> Robot Framework - Selenium project example
 
-[![Build Status](https://travis-ci.org/depapp/OeSeS.svg?branch=master)](https://travis-ci.org/depapp/OeSeS)
+# Built with:
